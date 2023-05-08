@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearTweetErrors, fetchTweets } from '../../store/tweets';
-import TweetBox from './TweetBox';
+import TweetBox from './TweetBox/TweetBox.js';
 
 function Tweets () {
   const dispatch = useDispatch();

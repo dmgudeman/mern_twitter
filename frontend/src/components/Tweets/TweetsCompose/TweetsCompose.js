@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearTweetErrors, composeTweet } from '../../store/tweets';
-import TweetBox from './TweetBox';
-import './TweetCompose.css';
+import { clearTweetErrors, composeTweet } from '../../../store/tweets';
+import TweetBox from '../TweetBox/TweetBox';
+import './TweetsCompose.css';
 
 function TweetCompose () {
   const [text, setText] = useState('');
