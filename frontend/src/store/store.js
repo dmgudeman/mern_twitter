@@ -3,9 +3,11 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import session from './session';
 import errors from './errors';
+import tweets from './tweets';
 
 const rootReducer = combineReducers({
   session,
+  tweets,
   errors
 });
 
