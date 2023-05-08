@@ -11,9 +11,10 @@ async function jwtFetch(url, options = {}) {
     // If the options.method is not 'GET', then set the "Content-Type" header to
     // "application/json".
     if (options.method.toUpperCase() !== "GET") {
-      options.headers["Content-Type"] =
-        options.headers["Content-Type"] || "application/json";
-    }
+        options.headers["Content-Type"] =
+          options.headers["Content-Type"] || "application/json";
+        options.headers["CSRF-Token"] = getCookie("CSRF-TOKEN");
+      }
   
     // Call fetch with the url and the updated options hash.
     const res = await fetch(url, options);
@@ -36,10 +37,6 @@ async function jwtFetch(url, options = {}) {
     return null;
   }
 
-  if (options.method.toUpperCase() !== "GET") {
-    options.headers["Content-Type"] =
-      options.headers["Content-Type"] || "application/json";
-    options.headers["CSRF-Token"] = getCookie("CSRF-TOKEN");
-  }
+  
   
   export default jwtFetch;
